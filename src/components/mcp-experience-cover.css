@@ -1,0 +1,51 @@
+/* Deliberate user-requested exception: match the reference cover's light cool gray. */
+.mcp-experience-cover { display: block; width: 100%; height: auto; background: #f1f5f9; border-radius: var(--borderRadiusMedium); --cover-cycle: calc(var(--durationUltraSlow) * 16); }
+.mcp-experience-cover text { font-family: var(--fontFamilyBase); fill: var(--colorNeutralForeground1); }
+.mcp-experience-cover .cover-heading { font-size: var(--fontSizeHero900); font-weight: var(--fontWeightSemibold); }
+.mcp-experience-cover .cover-meta { font-size: var(--fontSizeBase200); fill: var(--colorNeutralForeground2); }
+.mcp-experience-cover .cover-paper { fill: var(--colorNeutralBackground1); stroke: var(--colorNeutralStroke2); stroke-width: var(--strokeWidthThin); }
+.mcp-experience-cover .cover-neutral { fill: var(--colorNeutralBackground3); }
+.mcp-experience-cover .cover-tint { fill: var(--colorBrandBackground2); }
+.mcp-experience-cover .cover-ink { fill: var(--colorBrandForeground1); }
+.mcp-experience-cover .cover-line { fill: none; stroke: var(--colorNeutralStroke1); stroke-width: var(--strokeWidthThin); }
+.mcp-experience-cover .cover-brand-line { fill: none; stroke: var(--colorBrandStroke1); stroke-width: var(--strokeWidthThick); }
+.mcp-experience-cover .cover-grid-line { fill: none; stroke: var(--colorNeutralStroke2); stroke-width: var(--strokeWidthThin); }
+.mcp-experience-cover .cover-success { fill: var(--colorStatusSuccessBackground1); }
+.mcp-experience-cover .cover-check { fill: none; stroke: var(--colorStatusSuccessForeground1); stroke-width: var(--strokeWidthThick); }
+.mcp-experience-cover .cover-prompt { animation: cover-prompt var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+.mcp-experience-cover .cover-response { animation: cover-response var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+.mcp-experience-cover .cover-typing { animation: cover-typing var(--cover-cycle) var(--curveEasyEase) infinite; }
+.mcp-experience-cover .cover-dot { animation: cover-dot calc(var(--durationUltraSlow) * 2) var(--curveEasyEase) infinite; }
+.mcp-experience-cover .cover-dot-1 { animation-delay: calc(var(--durationNormal) * -1); }
+.mcp-experience-cover .cover-dot-2 { animation-delay: calc(var(--durationNormal) * -2); }
+.mcp-experience-cover .cover-record-row { animation: cover-row var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+.mcp-experience-cover .cover-record-row-1 { animation-delay: var(--durationNormal); }
+.mcp-experience-cover .cover-record-row-2 { animation-delay: calc(var(--durationNormal) * 2); }
+.mcp-experience-cover .cover-scan { animation: cover-scan var(--cover-cycle) var(--curveEasyEase) infinite; }
+.mcp-experience-cover .cover-verified { animation: cover-verified var(--cover-cycle) var(--curveDecelerateMid) infinite; transform-box: fill-box; transform-origin: center; }
+.mcp-experience-cover .cover-task-check { animation: cover-check var(--cover-cycle) var(--curveEasyEase) infinite; }
+.mcp-experience-cover .cover-task-check-1 { animation-delay: var(--durationSlow); }
+.mcp-experience-cover .cover-task-check-2 { animation-delay: calc(var(--durationSlow) * 2); }
+.mcp-experience-cover .cover-surface { animation: cover-surface var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+.mcp-experience-cover .cover-surface-1 { animation-delay: var(--durationSlow); }
+.mcp-experience-cover .cover-surface-2 { animation-delay: calc(var(--durationSlow) * 2); }
+.mcp-experience-cover .cover-block { animation: cover-assemble var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+.mcp-experience-cover .cover-block-1 { animation-delay: var(--durationSlow); }
+.mcp-experience-cover .cover-block-2 { animation-delay: calc(var(--durationSlow) * 2); }
+.mcp-experience-cover .cover-ring { stroke-dasharray: 76 100; animation: cover-chart var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+.mcp-experience-cover .cover-chart { stroke-dasharray: 100; animation: cover-chart var(--cover-cycle) var(--curveDecelerateMid) infinite; }
+@keyframes cover-prompt { 0%, 4% { opacity: 0; transform: translateY(var(--spacingVerticalM)); } 12%, 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+@keyframes cover-response { 0%, 24% { opacity: 0; transform: translateY(var(--spacingVerticalM)); } 34%, 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+@keyframes cover-typing { 0%, 10%, 30%, 100% { opacity: 0; } 14%, 25% { opacity: 1; } }
+@keyframes cover-dot { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(calc(var(--spacingVerticalXS) * -1)); } }
+@keyframes cover-row { 0%, 27% { opacity: 0; transform: translateX(var(--spacingHorizontalL)); } 40%, 88% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; transform: translateX(0); } }
+@keyframes cover-scan { 0%, 37% { opacity: 0; transform: translateY(0); } 42% { opacity: 1; transform: translateY(0); } 62% { opacity: 1; transform: translateY(calc(var(--spacingVerticalXXXL) * 3)); } 65%, 100% { opacity: 0; transform: translateY(calc(var(--spacingVerticalXXXL) * 3)); } }
+@keyframes cover-verified { 0%, 62% { opacity: 0; transform: scale(0.7); } 72%, 91% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+@keyframes cover-check { 0%, 50% { opacity: 0; } 61%, 90% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes cover-surface { 0%, 45% { opacity: 0.4; transform: translateY(var(--spacingVerticalL)); } 60%, 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0.4; transform: translateY(var(--spacingVerticalL)); } }
+@keyframes cover-assemble { 0%, 8% { opacity: 0; transform: translateY(var(--spacingVerticalXXL)); } 25%, 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(var(--spacingVerticalXXL)); } }
+@keyframes cover-chart { 0%, 30% { stroke-dashoffset: 100; } 58%, 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 100; } }
+@media (prefers-reduced-motion: reduce) {
+  .mcp-experience-cover * { animation-name: none !important; }
+  .mcp-experience-cover .cover-typing, .mcp-experience-cover .cover-scan { visibility: hidden; }
+}

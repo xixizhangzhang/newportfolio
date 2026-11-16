@@ -1,0 +1,22 @@
+/* Shared motion only: each card retains its existing surface and hover states. */
+.fui-Card,
+.fui-Card::before,
+.fui-Card::after,
+.portfolio-project,
+.portfolio-contact-card,
+.portfolio-contact-email {
+  transition-property: background-color, color, border-color, box-shadow, opacity;
+  transition-duration: var(--durationSlow);
+  transition-timing-function: var(--curveEasyEase);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fui-Card,
+  .fui-Card::before,
+  .fui-Card::after,
+  .portfolio-project,
+  .portfolio-contact-card,
+  .portfolio-contact-email {
+    transition: none;
+  }
+}

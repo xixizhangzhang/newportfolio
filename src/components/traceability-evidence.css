@@ -1,0 +1,58 @@
+.traceability-relationship { display: block; width: 100%; height: auto; }
+.traceability-links { fill: none; stroke: var(--colorNeutralForeground2); stroke-width: var(--strokeWidthThick); stroke-linecap: round; stroke-linejoin: round; }
+.traceability-node { fill: var(--colorNeutralBackground1); stroke: var(--colorNeutralStroke1); stroke-width: var(--strokeWidthThick); }
+.traceability-node rect { rx: var(--borderRadiusMedium); }
+.traceability-labels { fill: var(--colorNeutralForeground1); font-family: var(--fontFamilyBase); font-size: var(--fontSizeBase600); }
+.traceability-small { font-size: var(--fontSizeBase400); fill: var(--colorNeutralForeground2); }
+.traceability-network-links { fill: none; stroke: var(--colorNeutralStroke1); stroke-width: var(--strokeWidthThin); }
+.traceability-traced-link { fill: none; stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThick); stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation-duration: calc(var(--durationUltraSlow) * 12); animation-timing-function: var(--curveEasyEase); animation-iteration-count: infinite; }
+.traceability-traced-link[data-step="1"] { animation-name: traceability-connect-first; }
+.traceability-traced-link[data-step="2"] { animation-name: traceability-connect-second; }
+.traceability-traced-link[data-step="3"] { animation-name: traceability-connect-third; }
+.traceability-network-item rect { fill: var(--colorNeutralBackground1); stroke: var(--colorNeutralStroke1); stroke-width: var(--strokeWidthThin); rx: var(--borderRadiusMedium); }
+.traceability-network-item text { fill: var(--colorNeutralForeground3); font-family: var(--fontFamilyBase); font-size: var(--fontSizeBase400); }
+.traceability-endpoint rect { stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThick); }
+.traceability-endpoint text { fill: var(--colorNeutralForeground1); font-weight: var(--fontWeightSemibold); }
+.traceability-network-item .traceability-traced-node { stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThick); opacity: 0; animation-duration: calc(var(--durationUltraSlow) * 12); animation-timing-function: var(--curveEasyEase); animation-iteration-count: infinite; }
+.traceability-network-item .traceability-traced-node[data-step="0"] { opacity: 1; }
+.traceability-traced-node[data-step="1"] { animation-name: traceability-reveal-second; }
+.traceability-traced-node[data-step="2"] { animation-name: traceability-reveal-third; }
+.traceability-traced-node[data-step="3"] { animation-name: traceability-reveal-fourth; }
+/* Normalized SVG path lengths reveal continuous connections, never change line weight. */
+@keyframes traceability-connect-first { 0%, 8%, 100% { stroke-dashoffset: 1; } 25%, 99% { stroke-dashoffset: 0; } }
+@keyframes traceability-connect-second { 0%, 30%, 100% { stroke-dashoffset: 1; } 47%, 99% { stroke-dashoffset: 0; } }
+@keyframes traceability-connect-third { 0%, 52%, 100% { stroke-dashoffset: 1; } 69%, 99% { stroke-dashoffset: 0; } }
+@keyframes traceability-reveal-second { 0%, 25%, 100% { opacity: 0; } 30%, 99% { opacity: 1; } }
+@keyframes traceability-reveal-third { 0%, 47%, 100% { opacity: 0; } 52%, 99% { opacity: 1; } }
+@keyframes traceability-reveal-fourth { 0%, 69%, 100% { opacity: 0; } 74%, 99% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .traceability-traced-link { animation: none; stroke-dashoffset: 0; } .traceability-network-item .traceability-traced-node { animation: none; opacity: 1; } }
+.traceability-context { display: flex; flex-wrap: wrap; gap: var(--spacingHorizontalL); }
+.traceability-context-step { flex: 1; display: flex; align-items: center; gap: var(--spacingHorizontalL); min-width: min(100%, calc(var(--spacingHorizontalXXXL) * 7)); }
+.traceability-context-step > .fui-Card { flex: 1; min-width: 0; height: 100%; }
+.traceability-context-step > .fui-Card::after { border-radius: inherit; }
+.traceability-context-step > svg { flex-shrink: 0; }
+.traceability-final-evidence { margin: 0; display: flex; flex-direction: column; gap: var(--spacingVerticalL); }
+.traceability-final-evidence figcaption { color: var(--colorNeutralForeground2); }
+.traceability-activities { padding: var(--spacingHorizontalXXL); display: flex; flex-direction: column; gap: var(--spacingVerticalXXL); }
+.traceability-evidence-heading, .traceability-filters { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacingHorizontalL); }
+.traceability-timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--spacingHorizontalXXXL) * 4)), 1fr)); padding: 0; margin: 0; gap: var(--spacingHorizontalL); list-style: none; }
+.traceability-timeline li { display: flex; flex-direction: column; gap: var(--spacingVerticalM); padding-top: var(--spacingVerticalL); border-top-width: var(--strokeWidthThin); border-top-style: dashed; border-top-color: var(--colorNeutralStroke1); }
+.traceability-event-icon { color: var(--colorBrandForeground1); }
+.traceability-records { display: flex; flex-wrap: wrap; gap: var(--spacingHorizontalXXL); }
+.traceability-records > div { flex: 1; min-width: min(100%, calc(var(--spacingHorizontalXXXL) * 6)); display: flex; flex-direction: column; gap: var(--spacingVerticalL); }
+.traceability-records dl { margin: 0; display: flex; flex-direction: column; gap: var(--spacingVerticalM); font-size: var(--fontSizeBase200); }
+.traceability-records dl > div { display: flex; justify-content: space-between; gap: var(--spacingHorizontalL); }
+.traceability-records dd { margin: 0; }
+.traceability-page .mcp-story-flow { gap: calc(var(--spacingVerticalXXXL) * 2); }
+.traceability-page .mcp-story-section { padding-top: var(--spacingVerticalXXXL); }
+.traceability-page .legacy-evidence img { border-radius: var(--borderRadiusNone); box-shadow: none; }
+.traceability-page .legacy-evidence-caption { margin-top: var(--spacingVerticalM); color: var(--colorNeutralForeground2); font-size: var(--fontSizeBase200); line-height: var(--lineHeightBase300); }
+.traceability-page .legacy-evidence > figure { display: flex; flex-direction: column; }
+.traceability-page #trace-results { min-height: calc(100vh - var(--spacingVerticalXXXL) * 4); }
+.traceability-impact { display: flex; flex-direction: column; gap: var(--spacingVerticalL); padding: var(--spacingHorizontalXXL); }
+.traceability-impact-heading { display: flex; flex-direction: column; gap: var(--spacingVerticalXS); }
+.traceability-impact-status { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacingHorizontalS); }
+.traceability-impact-status > .fui-Caption1 { flex-basis: 100%; }
+.traceability-impact-actions { display: flex; flex-wrap: wrap; gap: var(--spacingHorizontalS); }
+.traceability-impact-table { overflow-x: auto; }
+.traceability-impact-table .fui-Table { min-width: calc(var(--spacingHorizontalXXXL) * 18); }

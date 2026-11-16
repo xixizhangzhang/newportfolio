@@ -1,0 +1,40 @@
+/* Shared portfolio accent mapping; original product imagery retains its own colors. */
+.portfolio-reference-theme,
+.portfolio-monochrome-theme {
+  --colorBrandBackground: var(--colorNeutralForeground1);
+  --colorBrandBackgroundHover: var(--colorNeutralForeground2);
+  --colorBrandBackgroundPressed: var(--colorNeutralForeground1);
+  --colorBrandBackgroundSelected: var(--colorNeutralForeground1);
+  --colorBrandBackgroundStatic: var(--colorNeutralForeground1);
+  --colorBrandBackground2: var(--colorNeutralBackground3);
+  --colorBrandBackground2Hover: var(--colorNeutralBackground4);
+  --colorBrandBackground2Pressed: var(--colorNeutralBackground4);
+  --colorBrandForeground1: var(--colorNeutralForeground1);
+  --colorBrandForeground2: var(--colorNeutralForeground2);
+  --colorBrandForeground2Hover: var(--colorNeutralForeground1);
+  --colorBrandForeground2Pressed: var(--colorNeutralForeground1);
+  --colorBrandForegroundLink: var(--colorNeutralForeground1);
+  --colorBrandForegroundLinkHover: var(--colorNeutralForeground2);
+  --colorBrandForegroundLinkPressed: var(--colorNeutralForeground1);
+  --colorBrandForegroundLinkSelected: var(--colorNeutralForeground1);
+  --colorBrandStroke1: var(--colorNeutralForeground1);
+  --colorBrandStroke2: var(--colorNeutralStroke1);
+  --colorCompoundBrandBackground: var(--colorNeutralForeground1);
+  --colorCompoundBrandBackgroundHover: var(--colorNeutralForeground2);
+  --colorCompoundBrandBackgroundPressed: var(--colorNeutralForeground1);
+  --colorCompoundBrandStroke: var(--colorNeutralForeground1);
+  --colorCompoundBrandForeground1: var(--colorNeutralForeground1);
+  --colorNeutralForeground2BrandHover: var(--colorNeutralForeground1);
+  --colorNeutralForeground2BrandPressed: var(--colorNeutralForeground1);
+  --colorNeutralForeground2BrandSelected: var(--colorNeutralForeground1);
+  --colorNeutralForeground3BrandHover: var(--colorNeutralForeground1);
+  --colorNeutralForeground3BrandPressed: var(--colorNeutralForeground1);
+  --colorNeutralForeground3BrandSelected: var(--colorNeutralForeground1);
+  --colorPaletteLavenderBackground2: var(--colorNeutralBackground4);
+  --colorPaletteLavenderBorder2: var(--colorNeutralStroke1);
+  --colorPaletteLavenderForeground2: var(--colorNeutralForeground2);
+  --colorPalettePurpleBackground2: var(--colorNeutralBackground3);
+  --colorPalettePurpleBorder2: var(--colorNeutralStroke1);
+  --colorPalettePurpleBorderActive: var(--colorNeutralForeground1);
+  --colorPalettePurpleForeground2: var(--colorNeutralForeground1);
+}

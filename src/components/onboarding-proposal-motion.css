@@ -1,0 +1,20 @@
+/* Deliberate original-prototype palette for faithful historical evidence. */
+.onboarding-proposal-motion { display: block; width: 100%; height: auto; font-family: Arial, sans-serif; fill: #343936; border-radius: var(--borderRadiusLarge); }
+.proposal-backdrop { fill: #f7f7f7; }
+.proposal-sheet, .proposal-modal { fill: #f7f7f7; stroke: #d9dce0; stroke-width: 2; }
+.proposal-modal { filter: drop-shadow(0 3px 3px #c5c7ca); }
+.proposal-column, .proposal-row { fill: #f7f7f7; stroke: #dedfe0; stroke-width: 2; }
+.proposal-header { fill: #0e214a; }
+.proposal-wordmark { fill: #fff; }
+.proposal-nav-line { stroke: #fff; stroke-width: 5; stroke-linecap: round; }
+.proposal-divider { fill: none; stroke: #d8dadb; stroke-width: 2; }
+.proposal-sidebar-active { fill: #e1edf6; }
+.proposal-placeholder { fill: #d9d9dc; }
+.proposal-input-line { fill: #989c9a; }
+.proposal-selected { fill: #f7f7f7; stroke: #0082f2; stroke-width: 2; }
+.proposal-primary { fill: #007df0; }
+.proposal-accent { fill: #007df0; }
+.proposal-muted { fill: #989c9a; }
+.proposal-check { fill: none; stroke: #0878b9; stroke-width: 3; }
+.proposal-arrow { fill: none; stroke: #dfe1e0; stroke-width: 5; }
+.proposal-cursor { fill: #000; stroke: #fff; stroke-width: 1; }

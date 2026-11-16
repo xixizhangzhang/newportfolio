@@ -1,0 +1,61 @@
+.portfolio-home:has(.portrait-introduction) { min-height: 100vh; }
+.portrait-introduction { display: grid; grid-template-columns: minmax(0, calc(var(--spacingHorizontalXXXL) * 9)) minmax(0, 1fr); align-items: stretch; flex-shrink: 0; gap: calc(var(--spacingHorizontalXXL) * 3); width: 100%; max-width: var(--portfolioContentWidth); margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto; padding-top: var(--spacingVerticalXXXL); padding-bottom: var(--spacingVerticalXXXL); }
+.portrait-badge { position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: var(--borderRadiusXLarge); background-color: var(--colorNeutralBackground1); color: var(--colorNeutralForeground1); box-shadow: var(--shadow8); width: 100%; }
+.portrait-hanging { position: relative; display: flex; min-width: 0; }
+/* Requested cursor replacement deliberately overrides the invisible Fluent action's native cursor. */
+.portrait-hanging > .portrait-check-in-target { position: absolute; inset: calc(0 - var(--spacingHorizontalXL)); width: calc(100% + var(--spacingHorizontalXL) * 2); height: calc(100% + var(--spacingVerticalXL) * 2); max-width: none; z-index: 2; opacity: 0; cursor: none; }
+.portrait-hanging > .portrait-check-in-target,
+.portrait-hanging > .portrait-check-in-target:hover,
+.portrait-hanging > .portrait-check-in-target:active,
+.portrait-hanging > .portrait-check-in-target * { cursor: none !important; }
+.portrait-tap-cursor { position: fixed; left: var(--badge-cursor-x, 0); top: var(--badge-cursor-y, 0); margin-left: calc(0 - var(--spacingHorizontalXXXL) * 2); margin-top: calc(0 - var(--spacingVerticalXXXL) * 2); width: calc(var(--spacingHorizontalXXXL) * 4); pointer-events: none; z-index: 100; opacity: 0; transition-property: opacity; transition-duration: var(--durationNormal); transition-timing-function: var(--curveEasyEase); }
+.portrait-tap-cursor[data-visible="true"] { opacity: 1; }
+.portrait-tap-content { display: flex; flex-direction: column; align-items: center; gap: var(--spacingVerticalXS); color: var(--colorNeutralForeground1); transform: scale(0.9); transition-property: transform; transition-duration: var(--durationGentle); transition-timing-function: var(--curveDecelerateMax); }
+.portrait-tap-cursor[data-visible="true"] .portrait-tap-content { transform: scale(1); }
+.portrait-tap-waves { width: calc(var(--spacingHorizontalXXXL) * 2 + var(--spacingHorizontalXXL)); height: calc(var(--spacingVerticalXXXL) * 2 + var(--spacingVerticalXXL)); color: var(--colorNeutralForeground1); transform: scale(1); transition-property: transform; transition-duration: var(--durationFast); transition-timing-function: var(--curveEasyEase); }
+/* Requested press feedback uses an exact ten-percent scale reduction. */
+.portrait-tap-content[data-pressed="true"] .portrait-tap-waves { transform: scale(0.9); }
+.portrait-tap-label { font-family: var(--fontFamilyBase); font-size: var(--fontSizeBase200); line-height: var(--lineHeightBase200); white-space: nowrap; }
+.portrait-tap-waves path { stroke-width: var(--spacingHorizontalSNudge); stroke-linecap: round; }
+.portrait-tap-gradient-dark { stop-color: var(--colorNeutralForeground1); }
+.portrait-tap-gradient-gray { stop-color: var(--colorNeutralForeground4); }
+.portrait-hanging-swing { position: relative; display: flex; flex-direction: column; flex: 1; transform-origin: center var(--lanyardPivot); transform: rotate(var(--portraitSwing)); }
+.portrait-hanging-swing .portrait-badge { flex: 1; }
+.portrait-lanyard { position: absolute; top: calc(var(--lanyardBadgeOffset, 0px) - var(--lanyardReach, 100vh) - var(--spacingVerticalXXXL)); left: calc((100% - var(--spacingHorizontalXXXL)) / 2); width: var(--spacingHorizontalXXXL); height: calc(var(--lanyardReach, 100vh) + var(--spacingVerticalXXXL) + var(--spacingVerticalS)); display: flex; flex-direction: column; align-items: center; pointer-events: none; z-index: 1; }
+.portrait-lanyard-strap { flex: 1; width: 100%; background-color: var(--colorNeutralForeground1); background-image: repeating-linear-gradient(90deg, var(--colorNeutralForeground2) 0, var(--colorNeutralForeground2) var(--strokeWidthThin), transparent var(--strokeWidthThin), transparent var(--strokeWidthThick)), repeating-linear-gradient(0deg, var(--colorNeutralForeground3) 0, var(--colorNeutralForeground3) var(--strokeWidthThin), transparent var(--strokeWidthThin), transparent var(--strokeWidthThicker)); box-shadow: var(--shadow4); }
+.portrait-lanyard-clamp { width: calc(var(--spacingHorizontalXXXL) + var(--spacingHorizontalXS)); height: var(--spacingVerticalS); border-radius: var(--borderRadiusSmall); background-color: var(--colorNeutralForeground1); box-shadow: var(--shadow2); }
+/* Small rotation angles have no Fluent token; requested hanging motion stays on the outer composition. */
+@property --portraitSwing { syntax: "<angle>"; inherits: true; initial-value: 0deg; }
+.portrait-swing-motion { animation: portrait-badge-sway calc(var(--durationUltraSlow) * 12) var(--curveEasyEase) infinite; }
+@keyframes portrait-badge-sway { 0%, 100% { --portraitSwing: -2deg; } 50% { --portraitSwing: 2deg; } }
+.portrait-badge-top { display: flex; flex-direction: column; align-items: center; gap: var(--spacingVerticalXXL); padding: var(--spacingHorizontalXXL); background-color: var(--colorPaletteBlueBorderActive); }
+.portrait-media { position: relative; overflow: hidden; border-radius: var(--borderRadiusCircular); width: calc(var(--spacingHorizontalXXXL) * 6); height: calc(var(--spacingVerticalXXXL) * 6); border-style: solid; border-width: var(--strokeWidthThick); border-color: var(--colorNeutralBackground1); background-color: var(--colorNeutralBackground4); }
+.portrait-media video { position: absolute; top: calc(-1 * var(--spacingVerticalXXL)); left: 0; display: block; width: 100%; height: auto; }
+.portrait-badge-bottom { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: var(--spacingVerticalM); padding: var(--spacingHorizontalXXL); padding-bottom: var(--spacingVerticalXXXL); }
+.portrait-badge-name { display: flex; flex-direction: column; align-items: center; font-size: var(--fontSizeHero700); line-height: var(--lineHeightHero700); font-weight: var(--fontWeightRegular); }
+.portrait-badge-name strong { font-weight: var(--fontWeightBold); }
+.portrait-badge-role { font-size: var(--fontSizeBase200); line-height: var(--lineHeightBase200); color: var(--colorNeutralForeground2); }
+.portrait-badge-brand { display: flex; align-items: center; gap: var(--spacingHorizontalS); font-size: var(--fontSizeBase300); line-height: var(--lineHeightBase300); font-weight: var(--fontWeightSemibold); margin-top: var(--spacingVerticalS); }
+.portrait-badge-logo { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacingHorizontalXXS); width: var(--spacingHorizontalXXL); height: var(--spacingVerticalXXL); }
+.portrait-badge-logo i:nth-child(1) { background-color: var(--colorPaletteRedBackground3); }
+.portrait-badge-logo i:nth-child(2) { background-color: var(--colorPaletteLightGreenBackground3); }
+.portrait-badge-logo i:nth-child(3) { background-color: var(--colorPaletteBlueBorderActive); }
+.portrait-badge-logo i:nth-child(4) { background-color: var(--colorPaletteYellowBackground3); }
+.portrait-biography { display: flex; flex-direction: column; gap: var(--spacingVerticalXXL); max-width: calc(var(--spacingHorizontalXXXL) * 22); }
+/* User-selected Sora is a deliberate headline-only departure from Fluent typography. */
+.portrait-biography h1 { font-family: "Sora", var(--fontFamilyBase); font-size: calc(var(--fontSizeHero900) + var(--spacingHorizontalS)); line-height: calc(var(--lineHeightHero900) + var(--spacingVerticalS)); font-weight: var(--fontWeightSemibold); margin: 0; }
+.portrait-biography p { font-size: var(--fontSizeBase500); line-height: var(--lineHeightBase600); margin: 0; }
+.portrait-biography strong { font-weight: var(--fontWeightSemibold); }
+.portrait-work-action { margin-top: var(--spacingVerticalS); display: flex; flex-wrap: wrap; gap: var(--spacingHorizontalM); }
+/* Requested larger pill buttons, using Fluent spacing tokens beyond the large preset. */
+.portrait-work-action > .fui-Button { padding-top: var(--spacingVerticalM); padding-bottom: var(--spacingVerticalM); padding-left: var(--spacingHorizontalXXL); padding-right: var(--spacingHorizontalXXL); }
+.portrait-work-action .portrait-primary-action { background-color: var(--colorPalettePurpleForeground2); }
+.portrait-work-action .portrait-primary-action:hover, .portrait-work-action .portrait-primary-action:active { background-color: var(--colorPalettePurpleForeground2); color: var(--colorNeutralForegroundOnBrand); }
+@media (max-width: 700px) {
+  .portrait-introduction { grid-template-columns: minmax(0, 1fr); gap: var(--spacingVerticalXXXL); padding-top: 0; }
+  .portrait-hanging { width: 100%; max-width: calc(var(--spacingHorizontalXXXL) * 9); justify-self: center; }
+  .portrait-hanging-swing { padding-top: calc(var(--spacingVerticalXXXL) * 5); }
+  .portrait-biography h1 { font-size: var(--fontSizeHero800); line-height: var(--lineHeightHero800); }
+  .portrait-biography p { font-size: var(--fontSizeBase400); line-height: var(--lineHeightBase500); }
+}
+@media (prefers-reduced-motion: reduce) { .portrait-swing-motion { animation: none; } .portrait-tap-cursor, .portrait-tap-content, .portrait-tap-waves { transition: none; } }

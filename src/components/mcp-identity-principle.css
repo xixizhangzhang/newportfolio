@@ -1,0 +1,12 @@
+.mcp-identity-surfaces {
+  gap: var(--spacingHorizontalXXL);
+}
+
+.mcp-identity-surfaces > .mcp-identity-surface {
+  border-width: 0;
+  border-radius: calc(var(--borderRadiusXLarge) * 2);
+}
+
+.mcp-identity-surfaces > .mcp-identity-surface::after {
+  border-radius: inherit;
+}

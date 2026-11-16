@@ -1,0 +1,38 @@
+# Architecture
+- Portfolio access is a shared visitor passcode gate, not account login: Cloud verifies the secret and signed session receipts; browser sessionStorage retains only the receipt. Public home/resume and static assets remain public by explicit scope choice.
+- Keep the access dialog and status in one provider above all portfolio routes so badge, lock and project entry points share the same session and pending destination.
+- Play the badge reader chirp through Web Audio only on explicit badge activation, with graceful failure and context cleanup, so sound never autoplays or blocks authentication.
+- Cap /ride Home, Work and career text/controls with the shared centered content-width token; stack image-left Work rows and keep the cycling illustration full-width so the scenery remains immersive.
+- Case studies share an upper-left All work control anchored inside the scrolling document so it scrolls away; preserve the transparent, content-sized header and initial introduction spacing.
+- Scope the ERP story's wider evidence layout to its own page class, keeping prose and other sections constrained while opportunity and billing maps use the available column width; this improves diagram readability without changing the MCP case study.
+- Keep CAB presentation evidence as source-derived data rendered in local Fluent components, with the lifecycle diagram and a collapsed theme section; this preserves original content without screenshot artifacts.
+- Keep ERP lifecycle stages in one typed content source, with phase and evidence labels separating pre-activation simulation from post-activation sample monitoring and forecasts; reuse the existing case-study layout to preserve portfolio consistency.
+- Organize the ERP story as Why this mattered, Key decisions and one Results section; keep all six prototypes under one design chapter so navigation stays selected throughout the lifecycle.
+- Render ERP lifecycle evidence from the supplied screenshot asset pointers in the private portfolio, with one highlight per prototype; share the animated lifecycle workbench SVG between Work and the detail opening to preserve project identity and matching motion.
+- The portfolio owns its single-page scrolling container and section navigation; keep Home, Work, and About in the same page so scrolling and active navigation stay synchronized.
+- Use the attached Fluent design system's local exports and tokens for portfolio controls and styling so managed library updates remain compatible.
+- Keep the Home greeting as one illustrated composition; register moving screen artwork to the image's intrinsic SVG coordinates and stop movement for reduced-motion preferences.
+- The ride homepage uses a shared portrait introduction with a looping video and reduced-motion poster for the active portfolio.
+- Redirect / to /ride with query preserved but no section fragment; initial loads and refreshes start at Home, while explicit in-app All work navigation opens Work through the shared navigation policy.
+- Compose /ride from the shared studio portfolio with an About-content slot so Home and Work remain synchronized without duplicating their markup; keep career stops in one typed data source for scenery, controls, and tests.
+- Render generated cyclist art through separate ink and opaque-interior SVG masks using Fluent color tokens, with animated wheel spokes and lighter vector city layers; this preserves character identity and prevents background lines crossing foreground artwork.
+- Preserve the cyclist's masked head while drawing continuous vector clothing and a seated foreground leg; draw the far arm and full far leg first, in the same skin colour as the near limbs, so the torso, frame and near leg hide their joins during pedaling.
+- Size the sticky career stage to the viewport and let its illustration flex into remaining height after text and controls; this prevents wide windows from pushing career navigation below the viewport.
+- Render only one career skyline at a time: finish its directional fade-out before mounting the next skyline for fade-in, so scenery never overlaps; keep token-based timing, a stable rider and reduced-motion support.
+- Follow the final sticky career stage with a Back to top footer in the portfolio scroll container, so users can scroll beyond the illustration and return to Home.
+- Compose featured-work rows as local Fluent Cards with whole-card pointer and keyboard navigation to dedicated /work routes; pass the originating Work URL so All work restores the correct portfolio page.
+- Share the animated SVG task-pattern cover between Work and the project opening; retain central typography and text-free surrounding patterns, with animations disabled for reduced motion.
+- Render context and paradigm diagrams as static, token-styled inline SVGs sharing monochrome styles, keeping task meaning crisp across display sizes.
+- Case studies use one continuous page scroll with a full-width introduction, cover and summary before the long-form two-column story; keep grouped chapter navigation sticky only alongside the long story and synchronized to section IDs so the opening is never squeezed by the rail.
+- Keep MCP Design principles in one chapter with five controlled Fluent tabs backed by one content source; render only the selected explanation and evidence so the story stays concise and chapter navigation remains stable.
+- Render Intent, Fit and Continuity with the uploaded standalone handoff runtime in isolated frames, keeping principle explanations in local Fluent components; this preserves the supplied event handlers and sample state without importing its application shell.
+- Adapt handoff layout through semantic DOM markers and token-based external styles, not generated runtime class names; review panes stay inline beside compressed chat and scenario controls stay compact.
+- Use the installed Microsoft Copilot conversation and chat-input components inside a scoped CopilotProvider for the intent demo; native message styling avoids inventing a substitute chat language while leaving the portfolio theme unchanged.
+- Keep Fit routing in a pure tested function shared with its native Copilot presentation; density defaults and evidence overrides must stay consistent across demo states.
+- Keep expense field visibility in the tested Fit data policy with explicit chat/panel context so chat density and the shared concise panel table stay consistent across scenarios.
+- Continuity prototypes share task state between the chat card and dismissible drawer so edits, filters and selections survive surface transitions.
+- Present Identity in a focused section using uploaded wireframe crops and a concise invariant-model table so original evidence stays distinct from interactive prototypes.
+- Present Trust's ordered review rules as a focused static section; do not imply enforcement or live transactions from explanatory content.
+- Keep building-block examples in a focused selectable presentation composed from local Fluent exports so Components and Patterns share one example area without duplicating the story section.
+- Drive the three design-language previews from their parent card's hover state so animation starts across the entire card and resets only when leaving it.
+- Apply shared token-based hover transitions to cards and their surface pseudo-elements without changing their skins; this prevents abrupt color, border and shadow changes across pages and respects reduced motion.

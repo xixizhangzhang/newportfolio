@@ -1,0 +1,22 @@
+.fit-examples { display: flex; flex-direction: column; gap: var(--spacingVerticalXXL); }
+.fit-rule-table { width: 100%; table-layout: fixed; }
+.fit-canvas { display: grid; grid-template-columns: minmax(0, 1fr); border-width: var(--strokeWidthThin); border-style: solid; border-color: var(--colorNeutralStroke2); border-radius: var(--borderRadiusLarge); overflow: hidden; background: var(--colorNeutralBackground1); }
+.fit-chat { min-width: 0; display: flex; flex-direction: column; gap: var(--spacingVerticalL); padding: var(--spacingHorizontalL); }
+.fit-drawer-content { display: flex; flex-direction: column; gap: var(--spacingVerticalL); }
+.fit-expense-table { width: 100%; table-layout: auto; overflow-wrap: normal; }
+.fit-issue-response { display: flex; flex-direction: column; gap: var(--spacingVerticalL); }
+.fit-entry-summary { display: flex; align-items: center; gap: var(--spacingHorizontalM); }
+.fit-issue-metrics { display: flex; flex-wrap: wrap; gap: var(--spacingHorizontalXL); }
+.fit-issue-metrics > div { display: flex; flex-direction: column; gap: var(--spacingVerticalXS); }
+ .fit-report-title { display: flex; align-items: center; flex-wrap: wrap; gap: var(--spacingHorizontalXL); }
+.fit-report-status { color: var(--colorStatusSuccessForeground1); font-size: var(--fontSizeBase400); font-weight: var(--fontWeightSemibold); line-height: var(--lineHeightBase400); }
+.fit-report-metadata { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spacingHorizontalL); margin: 0; padding-block: var(--spacingVerticalL); }
+.fit-report-metadata dt { color: var(--colorNeutralForeground2); }
+.fit-report-metadata dd { margin: 0; padding-top: var(--spacingVerticalS); overflow-wrap: anywhere; }
+.fit-report-total { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--spacingHorizontalL); }
+.fit-expense-list { display: flex; flex-direction: column; }
+.fit-expense-item { border-top-width: var(--strokeWidthThin); border-top-style: solid; border-top-color: var(--colorNeutralStroke2); padding-block: var(--spacingVerticalXXL); }
+.fit-expense-row { display: flex; align-items: center; gap: var(--spacingHorizontalL); flex-wrap: wrap; }
+.fit-expense-merchant { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--spacingVerticalS); overflow-wrap: anywhere; }
+.fit-expense-merchant > :last-child { color: var(--colorNeutralForeground2); }
+@media (max-width: 650px) { .fit-report-metadata { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fit-expense-table { table-layout: fixed; overflow-wrap: anywhere; } }

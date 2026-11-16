@@ -1,0 +1,4 @@
+.mcp-handoff-prototype { width: 100%; min-width: 0; }
+.mcp-handoff-frame { display: block; width: 100%; height: calc(var(--spacingVerticalXXXL) * 30); border-width: 0; border-radius: var(--borderRadiusXLarge); }
+[data-prototype-kind="intent"] .mcp-handoff-frame { height: calc(var(--spacingVerticalXXXL) * 22); }
+[data-prototype-kind="continuity"] .mcp-handoff-frame { height: calc(var(--spacingVerticalXXXL) * 22); }

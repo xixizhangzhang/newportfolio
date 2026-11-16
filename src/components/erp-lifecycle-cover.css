@@ -1,0 +1,13 @@
+.erp-lifecycle-cover { display: block; width: 100%; height: auto; --lc-cycle: calc(var(--durationUltraSlow) * 16); }
+.erp-lifecycle-cover .lc-heading { font-family: var(--fontFamilyBase); fill: var(--colorNeutralForeground1); font-size: var(--fontSizeHero900); font-weight: var(--fontWeightSemibold); }
+.erp-lifecycle-cover .lc-line, .erp-lifecycle-cover .lc-lens { fill: none; stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThick); stroke-linecap: round; stroke-linejoin: round; }
+.erp-lifecycle-cover .lc-muted-line { fill: none; stroke: var(--colorNeutralStroke1); stroke-width: var(--strokeWidthThin); stroke-linecap: round; }
+.erp-lifecycle-cover .lc-paper { fill: var(--colorNeutralBackground1); stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThick); rx: var(--borderRadiusMedium); }
+.erp-lifecycle-cover .lc-ink { fill: var(--colorNeutralForeground1); }
+.erp-lifecycle-cover .lc-setting-toggle { animation: lc-setting-toggle var(--lc-cycle) var(--curveEasyEase) infinite; }
+.erp-lifecycle-cover .lc-inspection { animation: lc-inspect var(--lc-cycle) var(--curveEasyEase) infinite; }
+.erp-lifecycle-cover .lc-balance { transform-origin: 0 0; animation: lc-balance-sway var(--lc-cycle) var(--curveEasyEase) infinite; }
+@keyframes lc-setting-toggle { 0%, 100% { transform: translateX(0); } 25%, 55% { transform: translateX(calc(var(--spacingHorizontalXXXL) * -1)); } }
+@keyframes lc-inspect { 0%, 100% { transform: translateY(0); } 35%, 60% { transform: translateY(calc(var(--spacingVerticalL) * -1)); } }
+@keyframes lc-balance-sway { 0%, 50%, 100% { transform: rotate(0); } 25% { transform: rotate(calc(atan2(var(--spacingHorizontalXS), var(--spacingHorizontalXXXL)))); } 75% { transform: rotate(calc(atan2(var(--spacingHorizontalXS), var(--spacingHorizontalXXXL)) * -1)); } }
+@media (prefers-reduced-motion: reduce) { .erp-lifecycle-cover * { animation: none !important; } }

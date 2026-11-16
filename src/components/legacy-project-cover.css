@@ -1,0 +1,27 @@
+.legacy-cover { display: block; width: 100%; height: auto; fill: var(--colorNeutralBackground1); stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThick); stroke-linecap: round; stroke-linejoin: round; }
+.legacy-cover rect { rx: var(--borderRadiusXLarge); }
+.legacy-cover .legacy-cover-ground { fill: var(--colorNeutralBackground3); stroke: none; }
+.legacy-cover-route { fill: none; stroke: var(--colorNeutralForeground3); stroke-dasharray: var(--spacingHorizontalS); }
+.legacy-cover-source, .legacy-cover-center { transform-box: fill-box; transform-origin: center; animation: legacy-cover-breathe calc(var(--durationUltraSlow) * 10) var(--curveEasyEase) infinite alternate; }
+.legacy-cover-center { animation-delay: calc(var(--durationUltraSlow) * -4); }
+.legacy-data-track { fill: none; stroke: var(--colorNeutralForeground3); }
+.legacy-data-packet { fill: var(--colorNeutralForeground1); stroke: none; offset-distance: 0; animation: legacy-data-flow calc(var(--durationUltraSlow) * 6) var(--curveLinear) infinite; }
+.legacy-data-packet-top { offset-path: path("M270 120C430 120 435 270 620 270"); }
+.legacy-data-packet-middle { offset-path: path("M270 270H620"); animation-delay: calc(var(--durationUltraSlow) * -2); }
+.legacy-data-packet-bottom { offset-path: path("M270 420C430 420 435 270 620 270"); animation-delay: calc(var(--durationUltraSlow) * -4); }
+@keyframes legacy-data-flow { from { offset-distance: 0; } to { offset-distance: 100%; } }
+@keyframes legacy-cover-breathe { from { transform: translateY(0); } to { transform: translateY(var(--spacingVerticalS)); } }
+.legacy-delivery-connections { fill: none; stroke: var(--colorNeutralForeground3); }
+.legacy-delivery-node path { fill: none; }
+.legacy-delivery-label { fill: var(--colorNeutralForeground1); stroke: none; text-anchor: middle; font-family: var(--fontFamilyBase); font-size: var(--fontSizeBase600); font-weight: var(--fontWeightSemibold); }
+.legacy-delivery-relationship { --delivery-message-cycle: calc(var(--durationUltraSlow) * 24); }
+.legacy-delivery-message { fill: none; stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThicker); animation: legacy-delivery-exchange var(--delivery-message-cycle) var(--curveLinear) infinite; }
+.legacy-delivery-message-top { offset-path: path("M300 190H660"); }
+.legacy-delivery-message-left { offset-path: path("M260 250L400 365"); animation-delay: calc(var(--durationUltraSlow) * -12); }
+.legacy-delivery-receiver { stroke: var(--colorNeutralForeground3); animation: legacy-delivery-receive var(--delivery-message-cycle) var(--curveEasyEase) infinite; }
+.legacy-delivery-receiver-provider { animation-delay: 0; }
+.legacy-delivery-receiver-rider { animation-delay: calc(var(--durationUltraSlow) * -12); }
+@keyframes legacy-delivery-exchange { 0% { offset-distance: 0; opacity: 0; } 2% { opacity: 1; } 20% { offset-distance: 100%; opacity: 1; } 22%, 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes legacy-delivery-receive { 0%, 16%, 42%, 100% { stroke: var(--colorNeutralForeground3); stroke-width: var(--strokeWidthThick); } 20%, 36% { stroke: var(--colorNeutralForeground1); stroke-width: var(--strokeWidthThickest); } }
+@media (prefers-reduced-motion: reduce) { .legacy-delivery-message { animation: none; display: none; } .legacy-delivery-receiver { animation: none; stroke: var(--colorNeutralForeground1); } }
+@media (prefers-reduced-motion: reduce) { .legacy-cover-source, .legacy-cover-center, .legacy-data-packet { animation: none; } .legacy-data-packet { offset-distance: 100%; } }

@@ -1,0 +1,14 @@
+.intent-demo { display: flex; flex-direction: column; gap: var(--spacingVerticalL); background: var(--colorBrandBackground2); padding: var(--spacingHorizontalXXL); border-radius: var(--borderRadiusLarge); }
+.intent-demo-tabs { overflow-x: auto; min-width: 0; }
+.intent-demo-chat { background: var(--colorNeutralBackground1); border-width: var(--strokeWidthThin); border-style: solid; border-color: var(--colorNeutralStroke2); border-radius: var(--borderRadiusLarge); display: flex; overflow: hidden; }
+.intent-demo-rail { background: var(--colorNeutralBackground3); display: flex; flex-direction: column; align-items: center; gap: var(--spacingVerticalXXL); padding: var(--spacingHorizontalM); padding-top: var(--spacingVerticalL); }
+.intent-demo-workspace { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.intent-demo-header { display: flex; align-items: center; justify-content: space-between; gap: var(--spacingHorizontalM); padding: var(--spacingHorizontalL); }
+.intent-demo-thread { padding: var(--spacingHorizontalXXL); padding-top: var(--spacingVerticalXXXL); padding-bottom: var(--spacingVerticalXXXL); flex: 1; min-width: 0; }
+.intent-demo-composer { display: flex; flex-direction: column; gap: var(--spacingVerticalS); padding: var(--spacingHorizontalL); text-align: start; }
+.intent-demo-response, .intent-demo-stack { display: flex; flex-direction: column; gap: var(--spacingVerticalL); min-width: 0; }
+.intent-demo-metrics, .intent-demo-comparison { display: flex; flex-wrap: wrap; gap: var(--spacingHorizontalL); }
+.intent-demo-metrics > div { flex: 1; display: flex; flex-direction: column; gap: var(--spacingVerticalS); }
+.intent-demo-comparison > * { flex: 1; min-width: 0; }
+.intent-mapping-table { table-layout: fixed; width: 100%; }
+.intent-demo-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacingHorizontalS); }
