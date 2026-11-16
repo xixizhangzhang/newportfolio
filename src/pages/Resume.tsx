@@ -25,7 +25,7 @@ export default function Resume() {
           <div><Mail16Regular aria-hidden="true" /><Link href="mailto:zhangx0303@gmail.com">zhangx0303@gmail.com</Link></div>
           <div><Call16Regular aria-hidden="true" /><Link href="tel:+16693331258">669-333-1258</Link></div>
           <div><Link16Regular aria-hidden="true" /><Link href="https://www.linkedin.com/in/zhang-xi/" target="_blank" rel="noopener noreferrer">linkedin.com/in/zhang-xi</Link></div>
-          <div><Globe16Regular aria-hidden="true" /><Link href="/ride" target="_blank" rel="noopener noreferrer">Portfolio</Link></div>
+          <div><Globe16Regular aria-hidden="true" /><Link href="/" target="_blank" rel="noopener noreferrer">Portfolio</Link></div>
         </div>
       </header>
       <section className="resume-section resume-education" aria-labelledby="resume-education">
