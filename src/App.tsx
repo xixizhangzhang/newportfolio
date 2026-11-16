@@ -76,8 +76,14 @@ const copilotTheme = {
 const queryClient = new QueryClient();
 
 const PortfolioHomeRedirect = () => {
-  const { search } = useLocation();
-  return <Navigate to={portfolioHomeRedirect(search)} replace />;
+  const { search, hash, state } = useLocation();
+  return (
+    <Navigate 
+      to={`${portfolioHomeRedirect(search)}${hash}`}
+      state={state}
+      replace
+    />
+  );
 };
 
 const App = () => {
@@ -88,8 +94,8 @@ const App = () => {
       <BrowserRouter>
         <PortfolioAccessProvider>
           <Routes>
-            <Route path="/" element={<PortfolioHomeRedirect />} />
-            <Route path="/ride" element={<Ride />} />
+            <Route path="/" element={<Ride />} />
+            <Route path="/ride" element={<PortfolioHomeRedirect />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/work/mcp-apps" element={<ProtectedProject><McpProject /></ProtectedProject>} />
             <Route path="/work/erp-agent-lifecycle" element={<ProtectedProject><ErpLifecycleProject /></ProtectedProject>} />
