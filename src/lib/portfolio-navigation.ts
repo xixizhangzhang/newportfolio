@@ -3,5 +3,5 @@ export function portfolioEntrySection(hash: string, navigationType: string): "ho
 }
 
 export function portfolioHomeRedirect(search: string): string {
-  return `/ride${search}`;
+  return `/${search}`;
 }
